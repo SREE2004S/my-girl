@@ -214,9 +214,42 @@ box-shadow:0 10px 20px rgba(123,44,191,.6);
 
 .romantic-head{
   font-family:'Great Vibes', cursive;
-  font-size:42px;
+  font-size:38px;
   color:#c9184a;
   font-weight:normal;
+  line-height:1.3;
+  animation:fadeGlow 4s ease-in-out infinite alternate;
+  text-shadow:0 0 8px #ff4d6d;
+}
+
+
+@keyframes fadeGlow{
+  from{
+    opacity:0.7;
+    text-shadow:0 0 5px #ff4d6d;
+  }
+  to{
+    opacity:1;
+    text-shadow:0 0 15px #ff4d6d;
+  }
+}
+.sparkle{
+ position:absolute;
+ font-size:14px;
+ color:#ff4d6d;
+ animation:sparkle 6s linear infinite;
+ opacity:0;
+}
+
+.sparkle:nth-child(1){left:20%;animation-delay:0s;}
+.sparkle:nth-child(2){left:40%;animation-delay:2s;}
+.sparkle:nth-child(3){left:60%;animation-delay:4s;}
+.sparkle:nth-child(4){left:80%;animation-delay:1s;}
+
+@keyframes sparkle{
+ 0%{bottom:-20px;opacity:0;}
+ 20%{opacity:1;}
+ 100%{bottom:100vh;opacity:0;}
 }
 
 </style>
@@ -232,13 +265,17 @@ box-shadow:0 10px 20px rgba(123,44,191,.6);
 <div class="heart">❤️</div>
 <div class="heart">❤️</div>
 <div class="heart">❤️</div>
+<div class="sparkle">✨</div>
+<div class="sparkle">💖</div>
+<div class="sparkle">✨</div>
+<div class="sparkle">💖</div>
 
 <div class="card">
 
 <h2 class="title romantic-head">
-  <span class="heart-left">💖</span>
-  Happy Valentine’s Day Azhagiii...
-  <span class="heart-right">💖</span>
+Happy Valentine’s Day<br>
+Azhagiii...
+<span class="heart-line">💖 💖</span>
 </h2>
 
 

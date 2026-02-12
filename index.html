@@ -171,7 +171,7 @@ box-shadow:0 0 10px rgba(123,44,191,.6);
 position:fixed;
 bottom:10px;
 left:20px;
-display:flex;
+display:none;
 gap:6px;
 z-index:20;
 }
@@ -369,6 +369,10 @@ yes.onclick=function(){
 var music=document.getElementById("bgMusic");
 music.volume=0;          // start silent
 music.play().catch(()=>{});
+document.querySelectorAll(".audio-wave").forEach(function(w){
+ w.style.display="flex";
+});
+
 
 // fade in volume
 var v=0;

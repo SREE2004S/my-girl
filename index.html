@@ -1,1 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+min-height:100vh;
+background:#ffd6e0;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow-y:auto;
+font-family:Arial;
+padding:40px 0;
+}
+
+.card{
+background:white;
+padding:35px 45px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+animation:floatCard 4s ease-in-out infinite;
+max-width:520px;
+width:90%;
+position:relative;
+z-index:10;
+}
+
+.love-text{
+font-family:'Noto Serif Tamil','Great Vibes', serif;
+font-size:18px;
+line-height:1.6;
+color:#c44569;
+margin:18px 0;
+letter-spacing:.3px;
+text-shadow:0 0 6px rgba(196,69,105,.25);
+}
+
+.question{
+font-family:'Great Vibes', cursive;
+font-size:28px;
+color:#b1124d;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:15px;
+}
+
+.buttons span{
+background:#c9184a;
+color:white;
+padding:10px 26px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.no{position:relative;}
+
+.hero-head{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px;
+margin-bottom:20px;
+}
+
+.hero-line1{
+font-family:'Great Vibes', cursive;
+font-size:38px;
+color:#ff4d6d;
+}
+
+.hero-line2{
+font-family:'Great Vibes', cursive;
+font-size:34px;
+color:#ff4d6d;
+}
+
+.heart{
+position:fixed;
+bottom:-40px;
+font-size:24px;
+color:#ff4d6d;
+opacity:0;
+animation:float 8s linear infinite;
+z-index:0;
+pointer-events:none;
+}
+
+.heart:nth-child(1){left:10%;animation-delay:0s;}
+.heart:nth-child(2){left:30%;animation-delay:2s;}
+.heart:nth-child(3){left:50%;animation-delay:4s;}
+.heart:nth-child(4){left:70%;animation-delay:6s;}
+.heart:nth-child(5){left:90%;animation-delay:8s;}
+
+@keyframes float{
+0%{transform:translateY(0) scale(.5);opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(-120vh) scale(1.2);opacity:0;}
+}
+
+@keyframes floatCard{
+50%{transform:translateY(-8px);}
+}
+
+#secondStep{
+display:none;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+#firstPage,#secondStep{
+transition:opacity .6s ease;
+}
+
+.glow-gift{
+background:#ff4d6d;
+color:white;
+border:none;
+padding:12px 30px;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+animation:giftPulse 2s infinite;
+box-shadow:0 0 10px rgba(255,77,109,.6);
+}
+
+@keyframes giftPulse{
+0%{box-shadow:0 0 10px rgba(255,77,109,.5);}
+50%{box-shadow:0 0 25px rgba(255,77,109,.9);}
+100%{box-shadow:0 0 10px rgba(255,77,109,.5);}
+}
+.tamil-love{
+font-family:'Dancing Script','Noto Serif Tamil', serif;
+font-size:18px;
+line-height:1.6;
+color:#c44569;
+text-shadow:0 0 6px rgba(196,69,105,.25);
+letter-spacing:.5px;
+}
+
+.surprise-glow{
+background:#7b2cbf;
+color:white;
+border:none;
+padding:12px 32px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+animation:surprisePulse 2s infinite;
+box-shadow:0 0 10px rgba(123,44,191,.6);
+}
+
+@keyframes surprisePulse{
+0%{box-shadow:0 0 10px rgba(123,44,191,.5);}
+50%{box-shadow:0 0 25px rgba(123,44,191,.9);}
+100%{box-shadow:0 0 10px rgba(123,44,191,.5);}
+}
+.audio-wave{
+position:fixed;
+bottom:10px;
+left:20px;
+display:none;
+gap:6px;
+z-index:20;
+}
+
+
+.audio-wave span{
+width:6px;
+height:20px;
+background:#ff4d6d;
+border-radius:6px;
+animation:wave 1.2s infinite ease-in-out;
+box-shadow:0 0 10px rgba(255,77,109,.8);
+}
+
+.audio-wave span:nth-child(1){animation-delay:0s;}
+.audio-wave span:nth-child(2){animation-delay:.1s;}
+.audio-wave span:nth-child(3){animation-delay:.2s;}
+.audio-wave span:nth-child(4){animation-delay:.3s;}
+.audio-wave span:nth-child(5){animation-delay:.4s;}
+.audio-wave span:nth-child(6){animation-delay:.5s;}
+.audio-wave span:nth-child(7){animation-delay:.6s;}
+.audio-wave span:nth-child(8){animation-delay:.7s;}
+.audio-wave span:nth-child(9){animation-delay:.8s;}
+.audio-wave span:nth-child(10){animation-delay:.9s;}
+
+@keyframes wave{
+0%,100%{height:15px;}
+50%{height:40px;}
+}
+.audio-wave.right{
+left:auto;
+right:20px;
+}
+html,body{
+width:100%;
+height:100%;
+}
+
+@media(max-width:768px){
+
+.card{
+width:92%;
+padding:25px 20px;
+}
+
+.hero-line1{font-size:28px;}
+.hero-line2{font-size:24px;}
+
+.question{font-size:22px;}
+
+.love-text{font-size:18px;}
+
+.tamil-love{font-size:17px;}
+
+.buttons span{
+padding:8px 20px;
+font-size:14px;
+}
+
+.glow-gift,.surprise-glow{
+font-size:14px;
+padding:10px 24px;
+}
+
+.audio-wave{
+bottom:5px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+<div class="audio-wave">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="audio-wave right">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+
+<audio id="bgMusic" 2>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+<div class="heart">❤️</div>
+
+<div class="card">
+
+<!-- ONLY FIX -->
+<div class="hero-head">
+<div>
+<div class="hero-line1">💖 Happy Valentine’s Day 💖</div>
+<div class="hero-line2">Azhagiii...</div>
+</div>
+</div>
+
+<div id="firstPage">
+
+
+<p class="question">
+Will you stay with me forever… holding my hand, loving me the same way always? 💖
+</p>
+
+<div class="buttons">
+<span id="yesBtn">YES</span>
+<span class="no" id="noBtn">NO</span>
+</div>
+
+</div>
+<!-- END FIX -->
+
+<div id="secondStep">
+
+<p class="love-text">
+You became my happiness… என் வாழ்க்கையின் மிக அழகான பகுதி நீ.
+</p>
+
+<button id="openGift" class="glow-gift">🎁 Open Gift</button>
+
+
+</div>  <!-- secondStep close -->
+
+<div id="story" style="display:none;margin-top:20px;">
+
+<p class="question">I knew it… you are my forever 💖</p>
+
+<button id="continueBtn" class="glow-gift">❤️ Continue</button>
+
+</div>
+
+<div id="tamilPage" style="display:none;margin-top:25px;">
+
+<p class="tamil-love">
+நீ என் வாழ்க்கையில் வந்தது வரமா என்று கேட்டால்…<br>
+நிச்சயமாக வரம்தான் என்று சொல்வேன்.<br>
+உன்னிடமிருந்து காதல் வெளிப்படாமல் இருந்தாலும்,<br>
+நான் உன் அருகில் இருக்கும்போது நானே திகைத்துப் போகிறேன்.<br>
+இந்த காதல் என் வாழ்க்கை முழுவதும் தொடரும்…<br>
+எந்த மாற்றமும் இல்லை.<br>
+என்னைவிட அதிகமா உன்னை நான் நேசிக்கிறேன் ❤️
+</p>
+
+
+<button id="tamilNext" class="glow-gift">அடுத்து ❤️</button>
+
+</div>
+
+<div id="tamilPage2" style="display:none;margin-top:25px;">
+
+<p class="tamil-love">
+உன்னை நினைக்கும் ஒவ்வொரு தருணமும்,
+என் மனசு அமைதியா சிரிக்குது…<br>
+என் வாழ்க்கையின் எல்லா அழகான கனவுகளிலும்
+நீ மட்டும்தான் இருக்கிறாய் ❤️<br>
+இந்த காதல் காலம் முழுக்க தொடரும்…
+உன்னோடு சேர்ந்து எல்லா நாளையும் வாழணும் 💞
+</p>
+
+<button id="surpriseBtn2" class="surprise-glow">💜 Surprise</button>
+
+<div id="imgBox2" style="display:none;margin-top:20px;">
+<img src="My Girl.jpg" style="max-width:100%;border-radius:18px;">
+</div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+var yes=document.getElementById("yesBtn");
+var no=document.getElementById("noBtn");
+var first=document.getElementById("firstPage");
+var second=document.getElementById("secondStep");
+var openGift=document.getElementById("openGift");
+var story=document.getElementById("story");
+var continueBtn=document.getElementById("continueBtn");
+var tamilPage=document.getElementById("tamilPage");
+
+continueBtn.onclick=function(){
+ story.style.display="none";
+ tamilPage.style.display="block";
+};
+
+yes.onclick=function(){
+
+var music=document.getElementById("bgMusic");
+music.volume=0;          // start silent
+music.play().catch(()=>{});
+document.querySelectorAll(".audio-wave").forEach(function(w){
+ w.style.display="flex";
+});
+
+
+// fade in volume
+var v=0;
+var fade=setInterval(()=>{
+ v+=0.05;
+ if(v>=1){
+   v=1;
+   clearInterval(fade);
+ }
+ music.volume=v;
+},200);
+
+// page animation
+first.style.opacity="0";
+setTimeout(()=>{
+ first.style.display="none";
+ second.style.display="flex";
+ second.style.opacity="1";
+},300);
+
+};
+
+
+no.onmousedown=function(e){
+e.preventDefault();
+no.style.position="fixed";
+no.style.left=Math.random()*(window.innerWidth-100)+"px";
+no.style.top=Math.random()*(window.innerHeight-40)+"px";
+};
+
+openGift.onclick=function(){
+ second.style.display="none";
+ story.style.display="block";
+};
+
+
+});
+
+var tamilNext=document.getElementById("tamilNext");
+
+tamilNext.onclick=function(){
+ alert("My Girl.jpg");
+};
+
+var tamilNext=document.getElementById("tamilNext");
+var tamilPage=document.getElementById("tamilPage");
+var tamilPage2=document.getElementById("tamilPage2");
+var surpriseBtn2=document.getElementById("surpriseBtn2");
+var imgBox2=document.getElementById("imgBox2");
+
+tamilNext.onclick=function(){
+ tamilPage.style.display="none";
+ tamilPage2.style.display="block";
+};
+
+surpriseBtn2.onclick=function(){
+ imgBox2.style.display="block";
+ imgBox2.scrollIntoView({behavior:"smooth",block:"center"});
+};
+document.getElementById("bgMusic").addEventListener("ended",function(){
+ this.pause();
+ this.currentTime=0;
+});
+
+</script>
+
+</body>
+</html>
 

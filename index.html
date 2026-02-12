@@ -367,14 +367,9 @@ continueBtn.onclick=function(){
 yes.onclick=function(){
 
 var music=document.getElementById("bgMusic");
-music.volume=0;          // start silent
+music.volume=0;
 music.play().catch(()=>{});
-document.querySelectorAll(".audio-wave").forEach(function(w){
- w.style.display="flex";
-});
 
-
-// fade in volume
 var v=0;
 var fade=setInterval(()=>{
  v+=0.05;
@@ -385,7 +380,10 @@ var fade=setInterval(()=>{
  music.volume=v;
 },200);
 
-// page animation
+document.querySelectorAll(".audio-wave").forEach(function(w){
+ w.style.display="flex";
+});
+
 first.style.opacity="0";
 setTimeout(()=>{
  first.style.display="none";
@@ -394,6 +392,7 @@ setTimeout(()=>{
 },300);
 
 };
+
 
 
 no.onmousedown=function(e){

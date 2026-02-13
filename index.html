@@ -14,11 +14,13 @@ min-height:100vh;
 background:#ffd6e0;
 display:flex;
 justify-content:center;
-align-items:flex-start;
+align-items:center;
 overflow-y:auto;
 font-family:Arial;
-padding:40px 0;
+padding:60px 15px;   /* top + side spacing */
+box-sizing:border-box;
 }
+
 
 .card{
 background:white;
@@ -28,10 +30,12 @@ text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,.2);
 animation:floatCard 4s ease-in-out infinite;
 max-width:520px;
-width:90%;
+width:100%;
 position:relative;
 z-index:10;
+margin:auto;
 }
+
 
 .love-text{
 font-family:'Noto Serif Tamil','Great Vibes', serif;

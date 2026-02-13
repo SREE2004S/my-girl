@@ -14,29 +14,24 @@ min-height:100vh;
 background:#ffd6e0;
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
+overflow-y:auto;
 font-family:Arial;
-padding:40px 2px;   /* 16px equal side spacing */
-box-sizing:border-box;
+padding:40px 0;
 }
-
 
 .card{
 background:white;
-padding:30px 20px;
+padding:35px 45px;
 border-radius:18px;
 text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,.2);
 animation:floatCard 4s ease-in-out infinite;
-max-width:600px;
-width:100%;
-margin:0 auto;
-box-sizing:border-box;
+max-width:520px;
+width:90%;
 position:relative;
 z-index:10;
 }
-
-
 
 .love-text{
 font-family:'Noto Serif Tamil','Great Vibes', serif;
@@ -69,11 +64,7 @@ border-radius:25px;
 cursor:pointer;
 }
 
-.no{
-position:relative;
-transition:all .8s ease;
-}
-
+.no{position:relative;}
 
 .hero-head{
 display:flex;
@@ -84,15 +75,10 @@ margin-bottom:20px;
 }
 
 .hero-line1{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:6px;
-flex-wrap:wrap;
-text-align:center;
+font-family:'Great Vibes', cursive;
+font-size:38px;
+color:#ff4d6d;
 }
-
-
 
 .hero-line2{
 font-family:'Great Vibes', cursive;
@@ -261,21 +247,6 @@ bottom:5px;
 }
 
 }
-@media (max-width:768px){
-
-body{
-display:block !important;
-padding-top:120px !important;
-}
-
-.card{
-margin:0 auto !important;
-}
-
-}
-.card{
-overflow:hidden;
-}
 
 </style>
 </head>
@@ -309,12 +280,11 @@ overflow:hidden;
 
 <!-- ONLY FIX -->
 <div class="hero-head">
-<div class="hero-line1">
-<span class="h-heart">💖</span>
-Happy Valentine’s Day
-<span class="h-heart">💖</span>
+<div>
+<div class="hero-line1">💖 Happy Valentine’s Day 💖</div>
+<div class="hero-line2">Azhagiii...</div>
 </div>
-
+</div>
 
 <div id="firstPage">
 
@@ -450,16 +420,11 @@ setTimeout(()=>{
 
 
 no.onmousedown=function(e){
- e.preventDefault();
- no.style.position="fixed";
-
-setTimeout(()=>{
- no.style.left=Math.random()*(window.innerWidth-120)+"px";
- no.style.top=Math.random()*(window.innerHeight-60)+"px";
-},100);
-
+e.preventDefault();
+no.style.position="fixed";
+no.style.left=Math.random()*(window.innerWidth-100)+"px";
+no.style.top=Math.random()*(window.innerHeight-40)+"px";
 };
-;
 
 openGift.onclick=function(){
  second.style.display="none";
